@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        Scanner s=new Scanner(System.in);
+        String str1=s.nextLine();
+        String str2=s.nextLine();
+        String str3=str1+str2;
+        char[] str=str3.toCharArray();
+        int i,j;
+        char k;
+        for(i=0;i<str.length;i++)
+        {
+            if(str[i]<90)
+            {
+                str[i]+=32;
+            }
+        }
+        for(i=0;i<str.length;i++)
+        {
+            for(j=i+1;j<str.length;j++)
+            {
+                if(str[i]>str[j])
+                {
+                    k=str[i];
+                    str[i]=str[j];
+                    str[j]=k;
+                }
+            }
+        }
+        k='$';
+        for(i=0;i<str.length;i++)
+        {
+            if(k==str[i])
+                continue;
+            k=str[i];
+            System.out.print(str[i]);
+            
+        }
+
+    }
+}
